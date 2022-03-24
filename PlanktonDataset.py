@@ -15,6 +15,7 @@ class PlanktonDataset(Dataset):
         image = self.images[idx]
         label = self.labels[idx]
         if self.transform:
+            raise ValueError("Transformation Exists in Dataset: ", os.getcwd())
             image = self.transform(image)
         if self.target_transform:
             label = self.target_transform(label)
